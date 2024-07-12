@@ -1,4 +1,10 @@
-#game {
-    width: 600px;
-    height: 400px;
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    image-rendering: pixelated;
+}
+
+#game-canvas {
+    width: 100%;
 }
