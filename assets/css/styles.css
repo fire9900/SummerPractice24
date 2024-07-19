@@ -3,8 +3,30 @@ html, body {
     margin: 0;
     overflow: hidden;
     image-rendering: pixelated;
+    /*background: black;*/
 }
 
 #game-canvas {
     width: 100%;
+    border-bottom: solid 5px #424242;
+    box-sizing: content-box;
+    /*background: #009432;*/
+    background: #ecf0f1;
+}
+
+.disable-anti-aliasing {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

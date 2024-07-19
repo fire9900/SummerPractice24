@@ -2,11 +2,14 @@ class Resources {
   constructor() {
     // Все изображения, которые нужно загрузить
     this.toLoad = {
-      // sky: "/sprites/sky.png",
       ground: "assets/images/sprites/ground-sheet.png",
-      // hero: "/sprites/hero-sheet.png",
-      // shadow: "/sprites/shadow.png",
-      // rod: "/sprites/rod.png",
+      hero: "assets/images/sprites/hero/hero-sheet.png",
+      goblinClub: "assets/images/sprites/enemies/goblinClub-sheet.png",
+      health: "assets/images/sprites/gui/healthBar/Health.png",
+      healthBar: "assets/images/sprites/gui/healthBar/Health_Bar.png",
+      healthHeart: "assets/images/sprites/gui/healthBar/Health_Heart.png",
+      xp: "assets/images/sprites/gui/xpBar/xp.png",
+      xpBar: "assets/images/sprites/gui/xpBar/xpBar.png"
     };
 
     // Объект для хранения всех изображений
