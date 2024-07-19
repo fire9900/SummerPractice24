@@ -30,3 +30,23 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+#gameover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 3vw;
+    color: #fff;
+    font-family: "Arial", serif;
+    text-align: center;
+    visibility: hidden;
+}
+
+#gameoverText {
+    text-transform: uppercase;
+    font-size: 4vw;
+    margin-bottom: 30px;
+}
+

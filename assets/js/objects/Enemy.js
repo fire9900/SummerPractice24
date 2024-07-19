@@ -41,43 +41,21 @@ export class Enemy extends GameObject {
         events.on("COLLISIONS_UPDATE", this, () => {
             const thisCollisions = colliderStore.collisions.get(this) ?? new Set();
             if (this.isCollider && thisCollisions.size > 0) {
-                // this.isMoving = false;
-                // this.position = this.prevPosition;
                 let angle, len, dist;
                 for (let other of thisCollisions) {
-                    // dist = Math.sqrt((this.center.x-other.center.x)**2 + (this.center.y-other.center.y)**2);
                     dist = rectSpacingDistance(this, other);
                     angle = calcAngle(this.center.x, this.center.y, other.center.x, other.center.y);
                     len = lerp(2, 0, dist/this.width);
                     if (other === this.hero) {
-                        // other.position.x += Math.cos(angle) * len * 0.2;
-                        // other.position.y += Math.sin(angle) * len * 0.2;
                         other.getForce(Math.cos(angle) * len * 0.2, Math.sin(angle) * len * 0.2);
-                        // this.position.x += Math.cos(angle) * len * 0.2;
                         this.getForce(Math.cos(angle + Math.PI) * len, 0);
-                        // this.position.y += Math.cos(angle) * len * 0.2;
-                        // console.log()
                         other.tryEmitPosition();
                     } else {
-                        // other.position.x += Math.cos(angle) * len * 0.5;
-                        // other.position.y += Math.sin(angle) * len * 0.5;
                         other.getForce(Math.cos(angle) * len * 0.5, Math.sin(angle) * len * 0.5);
-                        // this.position.x += Math.cos(angle + Math.PI) * len * 0.5;
-                        // this.position.y += Math.sin(angle + Math.PI) * len * 0.5;
                         if (this.isMoving)
                             this.getForce(Math.cos(angle + Math.PI) * len * 0.5, Math.sin(angle + Math.PI) * len * 0.5);
                     }
-
-
-                    // if (other === this.hero) {
-                    //     this.position.x += Math.cos(angle + Math.PI) * len * 50;
-                    //     this.position.y += Math.sin(angle + Math.PI) * len * 50;
-                    // }
-
-                    // console.log(Math.cos(angle) * len, "||", Math.sin(angle) * len);
                 }
-                // this.isMoving = true;
-                // this.prevPosition = this.position.duplicate();
             }
         });
 

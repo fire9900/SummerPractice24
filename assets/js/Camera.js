@@ -12,8 +12,6 @@ export class Camera extends GameObject {
     events.on("HERO_POSITION", this, heroPosition => {
 
       // Create a new position based on the hero's position
-      // const personHalfWidth = 0;
-      // const personHalfHeight = 7;
       const personHalfWidth = this.hero.width / 2;
       const personHalfHeight = this.hero.height / 2;
       const canvasWidth = 480;

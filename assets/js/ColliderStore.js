@@ -70,7 +70,6 @@ class ColliderStore {
                     this.collisions.set(obj1, this.collisions.get(obj1).add(obj2));
                     this.collisions.set(obj2, this.collisions.get(obj2).add(obj1));
                     if (!obj1.isWall || !obj2.isWall)
-                        // console.log(obj1, "||", obj2);
                     if (obj1.isWall && !obj2.isWall) {
                         obj2.position = obj2.prevPosition;
                     }

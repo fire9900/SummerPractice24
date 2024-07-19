@@ -54,11 +54,11 @@ mainScene.addChild(hero);
 const enemySpawner = new EnemySpawner(hero, hillGround, [
     {
         timeStart: 0,
-        timeEnd: 1200,
+        timeEnd: -1,
         enemy: GoblinClub,
         enemyNum: 1,
         // lastSpawnTime: 0,
-        enemySpawnDelay: 200
+        enemySpawnDelay: 2000
     }
 ]);
 mainScene.addChild(enemySpawner);
@@ -118,10 +118,11 @@ const ui = document.getElementsByClassName("ui")[0];
 
 events.on("HERO_DEATH", this, () => {
     gameLoop.stop();
+    document.getElementById("gameover").style.visibility = "visible";
 });
 
-// window.onbeforeunload = function() {
-//     // Не уходите, еще не все сохранено!
-//     let changesMade = 1;
-//     return changesMade ? "Игра начнётся заново!" : undefined;
-// };
+window.onbeforeunload = function() {
+    // Не уходите, еще не все сохранено!
+    let changesMade = 1;
+    return changesMade ? "Игра начнётся заново!" : undefined;
+};

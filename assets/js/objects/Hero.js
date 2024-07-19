@@ -43,7 +43,7 @@ export class Hero extends GameObject {
         this.width = 20;
         this.height = 38-10;
 
-        this.maxHealth = 2000;
+        this.maxHealth = 50;
         this.currHealth = this.maxHealth;
         this.attackRange = 30;
         this.attackDamage = 2;
